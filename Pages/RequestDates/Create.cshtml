@@ -1,0 +1,49 @@
+﻿@page
+@model VacationDBASPDesignPattern.Pages.RequestDates.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>RequestDate</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="RequestDate.EmpId" class="control-label"></label>
+                <input asp-for="RequestDate.EmpId" class="form-control" />
+                <span asp-validation-for="RequestDate.EmpId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RequestDate.Type" class="control-label"></label>
+                <input asp-for="RequestDate.Type" class="form-control" />
+                <span asp-validation-for="RequestDate.Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RequestDate.VacationType" class="control-label"></label>
+                <input asp-for="RequestDate.VacationType" class="form-control" />
+                <span asp-validation-for="RequestDate.VacationType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RequestDate.CDay" class="control-label"></label>
+                <input type="date" asp-for="RequestDate.CDay" class="form-control" />
+                <span asp-validation-for="RequestDate.CDay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

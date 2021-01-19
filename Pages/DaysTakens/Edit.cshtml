@@ -1,0 +1,50 @@
+﻿@page
+@model VacationDBASPDesignPattern.Pages.DaysTakens.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>DaysTaken</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DaysTaken.DTId" />
+            <div class="form-group">
+                <label asp-for="DaysTaken.EmpId" class="control-label"></label>
+                <input asp-for="DaysTaken.EmpId" class="form-control" />
+                <span asp-validation-for="DaysTaken.EmpId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DaysTaken.Type" class="control-label"></label>
+                <input asp-for="DaysTaken.Type" class="form-control" />
+                <span asp-validation-for="DaysTaken.Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DaysTaken.VacationType" class="control-label"></label>
+                <input asp-for="DaysTaken.VacationType" class="form-control" />
+                <span asp-validation-for="DaysTaken.VacationType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DaysTaken.CDay" class="control-label"></label>
+                <input type="date" asp-for="DaysTaken.CDay" class="form-control" />
+                <span asp-validation-for="DaysTaken.CDay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
